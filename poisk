@@ -1,0 +1,24 @@
+#include <iostream>
+//поиск символа в строке
+bool findCharacter(const char* str, char target) {
+    while (*str != '\0') {
+        if (*str == target) {
+            return true;
+        }
+        str++;
+    }
+    return false;
+}
+
+int main() {
+    const char* str = "super duper kod";
+    char target = 'u';
+
+    if (findCharacter(str, target)) {
+        std::cout << "Символ '" << target << "' найден в строке." << std::endl;
+    } else {
+        std::cout << "Символ '" << target << "' не найден в строке." << std::endl;
+    }
+
+    return 0;
+}
