@@ -1,0 +1,22 @@
+#include <iostream>
+// копирование строк
+int main() {
+    const int MAX_LENGTH = 100;
+    char source[MAX_LENGTH];
+    char destination[MAX_LENGTH];
+
+    std::cout << "Введите строку для копирования: ";
+    std::cin.getline(source, MAX_LENGTH);
+
+    int i = 0;
+    while (source[i] != '\0' && i < MAX_LENGTH - 1) {
+        destination[i] = source[i];
+        i++;
+    }
+
+    destination[i] = '\0'; // Установка завершающего нулевого символа
+
+    std::cout << "Скопированная строка: " << destination << std::endl;
+
+    return 0;
+}
