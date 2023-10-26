@@ -3,12 +3,12 @@
 int main() {
     char str[] = "Привет меня зовут алексей как итвои дела";
 
-    int length = 0;
+    int dlina = 0;
     for (int i = 0; str[i] != '\0'; ++i) {
         length++;
     }
 
-    std::cout << "Длина строки: " << length << std::endl;
+    std::cout << "Длина строки: " << dlina << std::endl;
 
     return 0;
 }
