@@ -14,9 +14,9 @@ int main() {
         i++;
     }
 
-    destination[i] = '\0'; // Установка завершающего нулевого символа
+   skopirovanaya[i] = '\0'; // Установка завершающего нулевого символа
 
-    std::cout << "Скопированная строка: " << destination << std::endl;
+    std::cout << "Скопированная строка: " << skopirovanaya << std::endl;
 
     return 0;
 }
