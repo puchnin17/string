@@ -2,15 +2,15 @@
 // копирование строк
 int main() {
     const int MAX_LENGTH = 100;
-    char source[MAX_LENGTH];
+    char vedenaya[MAX_LENGTH];
     char skopirovanaya[MAX_LENGTH];
 
     std::cout << "Введите строку для копирования: ";
-    std::cin.getline(source, MAX_LENGTH);
+    std::cin.getline(vedenaya, MAX_LENGTH);
 
     int i = 0;
-    while (source[i] != '\0' && i < MAX_LENGTH - 1) {
-        skopirovanaya[i] = source[i];
+    while (vedenaya[i] != '\0' && i < MAX_LENGTH - 1) {
+        skopirovanaya[i] = vedenaya[i];
         i++;
     }
 
