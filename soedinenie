@@ -1,40 +1,21 @@
 #include <iostream>
 
-//  соединение двух строк
-char* concatenateStrings(const char* str1, const char* str2) {
-    int len1 = 0;
-    while (str1[len1] != '\0') {
-        len1++;
-    }
-
-    int len2 = 0;
-    while (str2[len2] != '\0') {
-        len2++;
-    }
-
-    char* result = new char[len1 + len2 + 1];
-
-    for (int i = 0; i < len1; i++) {
-        result[i] = str1[i];
-    }
-
-    for (int i = 0; i < len2; i++) {
-        result[len1 + i] = str2[i];
-    }
-
-    result[len1 + len2] = '\0';  // Завершение строки нулевым символом
-    return result;
+// Соединение двух строк
+std::string concatenateStrings(const std::string& str1, const std::string& str2, int& index1, int& index2) {
+    index1 = str1.size(); // Индекс, на котором начинается вторая строка
+    index2 = index1 + str2.size(); // Индекс, на котором заканчивается вторая строка
+    return str1 + str2; // Используем оператор + для конкатенации строк
 }
 
 int main() {
-    const char* str1 = "Привет, ";
-    const char* str2 = "мир!";
-    
-    char* concatenated = concatenateStrings(str1, str2);
+    const std::string str1 = "Привет, ";
+    const std::string str2 = "мир!";
+    int index1, index2;
+
+    std::string concatenated = concatenateStrings(str1, str2, index1, index2);
 
     std::cout << "Результат: " << concatenated << std::endl;
-
-    delete[] concatenated; // Не забудьте освободить память
+    std::cout << " начинается с индекса " << index1 << " и заканчивается индексом " << index2 << std::endl;
 
     return 0;
 }
