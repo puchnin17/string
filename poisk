@@ -1,24 +1,32 @@
 #include <iostream>
-//поиск символа в строке
+//поиск символа в строке и вывод индексов
 bool findCharacter(const char* str, char target) {
+    int index = 0;
+    bool found = false;
+    
     while (*str != '\0') {
         if (*str == target) {
-            return true;
+            found = true;
+            break;
         }
         str++;
+        index++;
     }
-    return false;
+    
+    if (found) {
+        std::cout << "Символ '" << target << "' найден в строке, индекс: " << index << std::endl;
+    } else {
+        std::cout << "Символ '" << target << "' не найден в строке." << std::endl;
+    }
+
+    return found;
 }
 
 int main() {
     const char* str = "super duper kod";
     char target = 'u';
 
-    if (findCharacter(str, target)) {
-        std::cout << "Символ '" << target << "' найден в строке." << std::endl;
-    } else {
-        std::cout << "Символ '" << target << "' не найден в строке." << std::endl;
-    }
+    findCharacter(str, target);
 
     return 0;
 }
