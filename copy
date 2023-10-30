@@ -1,9 +1,11 @@
 #include <iostream>
+
 // копирование строк
 int main() {
     const int MAX_LENGTH = 100;
     char vedenaya[MAX_LENGTH];
     char skopirovanaya[MAX_LENGTH];
+    int skopirovannye_indeksy[MAX_LENGTH];
 
     std::cout << "Введите строку для копирования: ";
     std::cin.getline(vedenaya, MAX_LENGTH);
@@ -11,12 +13,19 @@ int main() {
     int i = 0;
     while (vedenaya[i] != '\0' && i < MAX_LENGTH - 1) {
         skopirovanaya[i] = vedenaya[i];
+        skopirovannye_indeksy[i] = i;
         i++;
     }
 
-   skopirovanaya[i] = '\0'; // Установка завершающего нулевого символа
+    skopirovanaya[i] = '\0'; // Установка завершающего нулевого символа
 
     std::cout << "Скопированная строка: " << skopirovanaya << std::endl;
+
+    std::cout << "Индексы скопированных символов: ";
+    for (int j = 0; j < i; j++) {
+        std::cout << skopirovannye_indeksy[j] << " ";
+    }
+    std::cout << std::endl;
 
     return 0;
 }
