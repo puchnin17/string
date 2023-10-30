@@ -1,7 +1,7 @@
 #include <iostream>
 // определение длины строки 
 int main() {
-    char str[] = "Привет меня зовут алексей как итвои дела";
+    char str[] = "ghbdtn";
 
     int dlina = 0;
     for (int i = 0; str[i] != '\0'; ++i) {
@@ -9,6 +9,12 @@ int main() {
     }
 
     std::cout << "Длина строки: " << dlina << std::endl;
+
+    std::cout << "Индексы символов в строке: ";
+    for (int i = 0; str[i] != '\0'; ++i) {
+        std::cout << i << " ";
+    }
+    std::cout << std::endl;
 
     return 0;
 }
